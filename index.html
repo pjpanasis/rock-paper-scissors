@@ -16,7 +16,6 @@
         let playerChoice = playerPlay();
         let computerChoice = computerPlay();
         if(round == 1 || round == 2 || round == 3 || round == 4){
-            console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
             playRound(playerChoice, computerChoice = computerPlay());
             if(round >= 3 &&(humanScore == 3 || computerScore == 3)){
                 winner();
@@ -25,7 +24,6 @@
                 game();
             }
         }else if(round >=5){
-            console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
             playRound(playerChoice, computerChoice = computerPlay());
             if(humanScore == computerScore){
                 console.log("You're still tied after " + round + " rounds. Time for a tie-breaker");
