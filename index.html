@@ -12,110 +12,110 @@
     let computerScore = 0;
     let round = 1;
 
-    function computerPlay(){
-        let choices = ["rock", "paper", "scissors"];
-        let choice = choices[Math.floor(Math.random()*choices.length)];
-        return choice;
-    }
-    
     function game(){
-        let playerChoice = playerPlay()
-        let computerChoice = computerPlay()
+        let playerChoice = playerPlay();
+        let computerChoice = computerPlay();
         if(round == 1 || round == 2 || round == 3 || round == 4){
-            console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
-            playRound(playerChoice, computerChoice = computerPlay())
+            console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
+            playRound(playerChoice, computerChoice = computerPlay());
             if(round >= 3 &&(humanScore == 3 || computerScore == 3)){
-                winner()
+                winner();
             }else{
-                round++
-                game()
+                round++;
+                game();
             }
         }else if(round >=5){
-            console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
-            playRound(playerChoice, computerChoice = computerPlay())
+            console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
+            playRound(playerChoice, computerChoice = computerPlay());
             if(humanScore == computerScore){
-                console.log("You're still tied after " + round + " rounds. Time for a tie-breaker")
-                round++
-                game()
+                console.log("You're still tied after " + round + " rounds. Time for a tie-breaker");
+                round++;
+                game();
             }else{
-                winner()
+                winner();
             }
         }
         
         function playRound(playerSelection, computerSelection){
-            console.log(computerSelection)
-            let playerChoice = playerSelection.toLowerCase()
+            console.log(computerSelection);
+            let playerChoice = playerSelection.toLowerCase();
             switch(playerChoice){
                 case "rock":
                     if(computerSelection == "paper"){
-                        console.log("You lose! Paper beats Rock!")
-                        computerScore++
-                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
+                        console.log("You lose! Paper beats Rock!");
+                        computerScore++;
+                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
                     }else if(computerSelection == "scissors"){
-                        console.log("You win! Rock beats Scissors!")
-                        humanScore++
-                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
+                        console.log("You win! Rock beats Scissors!");
+                        humanScore++;
+                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
                     }else if(computerSelection == "scissors"){
                     } else{
-                       return console.log("Its a draw! You both chose Rock!")
+                       return console.log("Its a draw! You both chose Rock!");
                     }
                 case "paper":
                     if(computerSelection == "rock"){
-                        console.log("You win! Paper beats Rock!")
-                        humanScore++
-                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
+                        console.log("You win! Paper beats Rock!");
+                        humanScore++;
+                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
                     }else if(computerSelection == "scissors"){
                     }else if(computerSelection == "scissors"){
-                        console.log("You lose! Scissors beats Paper!")
-                        computerScore++
-                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
+                        console.log("You lose! Scissors beats Paper!");
+                        computerScore++;
+                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
                     }else if(computerSelection == "scissors"){
                     } else{
-                        return console.log("Its a draw! You both chose Paper!")                 
+                        return console.log("Its a draw! You both chose Paper!");            
                     }
                 case "scissors":
                     if(computerSelection == "paper"){
-                        console.log("You win! Scissors beats Paper!")
-                        humanScore++
-                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
+                        console.log("You win! Scissors beats Paper!");
+                        humanScore++;
+                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
                     }else if(computerSelection == "scissors"){
                     }else if(computerSelection == "rock"){
-                        console.log("You lose! Rock beats Scissors!")
-                        computerScore++
-                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore)
+                        console.log("You lose! Rock beats Scissors!");
+                        computerScore++;
+                        return console.log("Current Scores - Human: " + humanScore + " Computer: " + computerScore);
                     }else if(computerSelection == "scissors"){
                     } else{
-                        return console.log("Its a draw! You both chose scissors!")
+                        return console.log("Its a draw! You both chose scissors!");
                     }
                 }
         }
     }
 
     function playGame(){
-        humanScore = 0
-        computerScore = 0
-        round = 1
-        game()
+        humanScore = 0;
+        computerScore = 0;
+        round = 1;
+        game();
+    }
+
+    function computerPlay(){
+        let choices = ["rock", "paper", "scissors"];
+        let choice = choices[Math.floor(Math.random()*choices.length)];
+        return choice;
     }
 
     function playerPlay(){
-        let choice = prompt("Rock, Paper or Scissors?")
-         choice = choice.toLocaleLowerCase()
+        let choice = prompt("Rock, Paper or Scissors?");
+         choice = choice.toLocaleLowerCase();
         if(choice.match(/^(rock|paper|scissors|)$/)){
-            return choice
+            return choice;
         }else{
-            console.log("Please enter rock, paper or scissors")
-            alert("Please enter rock, paper or scissors")
-            game()
+            console.log("Please enter rock, paper or scissors");
+            alert("Please enter rock, paper or scissors");
+            game();
         }
         
     }
 
     function winner(){
         if(humanScore > computerScore){
-            alert("You win! After " + round + " rounds, the final score is Human: " + humanScore + " Computer: " + computerScore)        
+            alert("You win! After " + round + " rounds, the final score is Human: " + humanScore + " Computer: " + computerScore);        
         }else if(humanScore < computerScore){
-            alert("You lost! After " + round + " rounds, the final score is Human: " + humanScore + " Computer: " + computerScore)
+            alert("You lost! After " + round + " rounds, the final score is Human: " + humanScore + " Computer: " + computerScore);
         }
     }
   </script>
